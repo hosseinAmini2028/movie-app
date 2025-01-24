@@ -20,18 +20,26 @@ export type BaseItem = {
   overview: string;
   popularity: number;
   poster_path: string;
-  title: string;
   video: boolean;
   vote_average: number;
   vote_count: number;
   release_date?: string;
   first_air_date?: string;
+  title?: string;
+  name?: string;
 };
 
 export type Movie = {
   release_date: string;
+  title: string;
 } & BaseItem;
 
 export type TVShow = {
   first_air_date: string;
+  name: string;
 } & BaseItem;
+
+export type FavoritItem = {
+  type: ItemType;
+  item: TVShow | Movie;
+};

@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import ReactQueryProvider from "@/Providers/ReactQueryProvider";
+import AppProvider from "@/Providers/ContextProvider";
+import { Bounce, ToastContainer } from "react-toastify";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,13 +33,29 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-slate-50 antialiased`}
       >
-        <ReactQueryProvider>
-          <div className="flex min-h-screen pt-20 flex-col">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </ReactQueryProvider>
+        <AppProvider>
+          <ReactQueryProvider>
+            <div className="flex min-h-screen pt-20 flex-col">
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </div>
+          </ReactQueryProvider>
+
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+            transition={Bounce}
+          />
+        </AppProvider>
       </body>
     </html>
   );

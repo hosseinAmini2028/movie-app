@@ -11,7 +11,7 @@ import FeaturedSection from "./FeaturedSection";
 
 export default function FeaturedTv() {
   const { data, isLoading } = useQuery({
-    queryKey: ["FeaturedMovies"],
+    queryKey: ["FeaturedTvShows"],
     queryFn: async () => {
       const result = await axiosInstance.get<PaginateData<Movie>>(
         `/tv/top_rated`
