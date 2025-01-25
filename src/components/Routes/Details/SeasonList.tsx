@@ -7,7 +7,10 @@ export default function SeasonList({ seasons }: { seasons: Season[] }) {
   return (
     <LayoutContent>
       {seasons.map((i) => (
-        <div className="flex my-6 p-4 border border-solid border-gray-200 rounded-xl">
+        <div
+          key={i.id}
+          className="flex my-6 p-4 border border-solid border-gray-200 rounded-xl"
+        >
           <NextImage src={i.poster_path} alt="" width={90} height={160} />
           <div className="pl-6 flex flex-col justify-evenly">
             <h3 className="text-xl font-semibold">{i.name}</h3>

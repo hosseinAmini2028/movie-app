@@ -1,5 +1,5 @@
 import { DivProps } from "@/types";
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
 
 export default function LayoutContent({

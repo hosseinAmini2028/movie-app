@@ -1,7 +1,6 @@
-import MovieDetails from "@/components/Routes/Details/MovieDetails";
 import SeasonList from "@/components/Routes/Details/SeasonList";
 import TvShowDetails from "@/components/Routes/Details/TvShowDetails";
-import { MovieDetailsType, TVShowDetails } from "@/types";
+import { TVShowDetails } from "@/types";
 import cFetch from "@/utils/cFetch";
 import React from "react";
 

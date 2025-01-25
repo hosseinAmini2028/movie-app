@@ -1,5 +1,5 @@
 "use client";
-import { ItemType, Person, SelectOption } from "@/types";
+import { ItemType, SelectOption } from "@/types";
 import { usePathname } from "next/navigation";
 import React, {
   createContext,
@@ -41,7 +41,6 @@ export default function FilterProvider({ children }: PropsWithChildren) {
 
   const pathname = usePathname();
 
-  console.log({ pathname });
 
   useEffect(() => {
     setFilterParams((prev) => ({

@@ -1,6 +1,6 @@
 "use client";
 import { useAppContext } from "@/Providers/ContextProvider";
-import { BaseItem, ItemType, Movie, TVShow } from "@/types";
+import { ItemType, Movie, TVShow } from "@/types";
 import { HeartIcon } from "@heroicons/react/24/solid";
 import { HeartIcon as HeartIconOutline } from "@heroicons/react/24/outline";
 import React, { useMemo } from "react";
@@ -15,12 +15,16 @@ export default function AddToFavorit(
   const isFavirote = useMemo(() => {
     return favoritList.find((i) => i.item.id === id && i.type === type);
   }, [id, favoritList, type]);
-  const handleToggleFavorit = (e : React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleToggleFavorit = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.stopPropagation();
     e.preventDefault();
-    isFavirote
-      ? removeFavorite({ item: props, type })
-      : addToFavorite({ item: props, type });
+    if (isFavirote) {
+      removeFavorite({ item: props, type });
+    } else {
+      addToFavorite({ item: props, type });
+    }
 
     toast.success(
       isFavirote

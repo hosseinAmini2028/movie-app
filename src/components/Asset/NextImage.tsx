@@ -1,5 +1,5 @@
 "use client"
-import Image, { ImageLoader } from "next/image";
+import Image from "next/image";
 import React, { ComponentProps } from "react";
 import imageLoader2 from "../../../public/image-placeholder.webp";
 

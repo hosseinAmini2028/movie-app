@@ -1,6 +1,6 @@
 "use client";
 
-import { FavoritItem, Movie, TVShow } from "@/types";
+import { FavoritItem } from "@/types";
 import {
   createContext,
   PropsWithChildren,

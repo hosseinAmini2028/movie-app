@@ -1,5 +1,4 @@
-import { BaseItem, ItemType, Movie, TVShow } from "@/types";
-import Image from "next/image";
+import { ItemType, Movie, TVShow } from "@/types";
 import Link from "next/link";
 import React from "react";
 import AddToFavorit from "./AddToFavorit";

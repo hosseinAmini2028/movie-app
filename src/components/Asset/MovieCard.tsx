@@ -1,5 +1,4 @@
-import { Movie, TVShow } from "@/types";
-import Image from "next/image";
+import { Movie} from "@/types";
 import React from "react";
 import CardItem from "./CardItem";
 

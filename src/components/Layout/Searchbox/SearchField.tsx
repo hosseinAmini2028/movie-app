@@ -6,15 +6,15 @@ type SearchFieldProps = {
   query: string;
   setQuery: (query: string) => void;
 };
-export default function SearchField({ query, setQuery }: SearchFieldProps) {
+export default function SearchField({ setQuery }: SearchFieldProps) {
   const [s, setS] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setQuery(s);
-    }, 500); 
+    }, 500);
     return () => clearTimeout(timer);
-  }, [s]);
+  }, [s , setQuery]);
   return (
     <div className="relative">
       <input

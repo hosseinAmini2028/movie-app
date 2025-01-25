@@ -1,7 +1,7 @@
 import AddToFavorit from "@/components/Asset/AddToFavorit";
 import LayoutContent from "@/components/Asset/LayoutContent";
 import NextImage from "@/components/Asset/NextImage";
-import { Movie, MovieDetailsType, TVShowDetails } from "@/types";
+import {  MovieDetailsType } from "@/types";
 import { convertMinutesToHHMM } from "@/utils/format-date";
 import React from "react";
 

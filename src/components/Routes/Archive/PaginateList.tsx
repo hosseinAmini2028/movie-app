@@ -5,11 +5,7 @@ import { useFilterParams } from "@/Providers/FilterProvider";
 import { Movie, PaginateData } from "@/types";
 import { axiosInstance } from "@/utils/axiosInstance";
 import { formatDate } from "@/utils/format-date";
-import {
-  useInfiniteQuery,
-  useQuery,
-  InfiniteData,
-} from "@tanstack/react-query";
+import { useInfiniteQuery, InfiniteData } from "@tanstack/react-query";
 import React, { useCallback, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -56,7 +52,7 @@ export default function PaginateList() {
 
   useEffect(() => {
     if (inView) fetchNextPage();
-  }, [inView]);
+  }, [inView, fetchNextPage]);
   return (
     <div className="grid flex-1 grid-cols-4 gap-4 ">
       {data?.map((i) => (

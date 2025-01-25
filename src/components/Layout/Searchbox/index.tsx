@@ -4,11 +4,10 @@ import SearchField from "./SearchField";
 import { useQuery } from "@tanstack/react-query";
 import { ItemType, Movie, PaginateData, TVShow } from "@/types";
 import { axiosInstance } from "@/utils/axiosInstance";
-import Image from "next/image";
 import NextImage from "@/components/Asset/NextImage";
 import IconLoading from "@/components/Asset/IconLoading";
 import usePopup from "@/hooks/usePopup";
-import { ArrowRightIcon, FilmIcon, TvIcon } from "@heroicons/react/24/outline";
+import {  FilmIcon, TvIcon } from "@heroicons/react/24/outline";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 
 export default function SearchBox() {
@@ -16,8 +15,7 @@ export default function SearchBox() {
   const [type, setType] = useState<ItemType>("Movie");
   const { open, setOpen, wrapperRef } = usePopup();
 
-  console.log({ query });
-  const { data, isLoading, isFetching, isSuccess } = useQuery({
+  const { data, isFetching, isSuccess } = useQuery({
     queryKey: ["Search333", type, query],
     queryFn: async () => {
       const result = await axiosInstance.get<PaginateData<Movie | TVShow>>(
@@ -93,7 +91,7 @@ export default function SearchBox() {
         </div>
       ) : null}
 
-      {isLoading ? (
+      {isFetching ? (
         <span className="absolute right-2 top-[50%] -translate-y-[50%]">
           <IconLoading width={32} height={32} />
         </span>

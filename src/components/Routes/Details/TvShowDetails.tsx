@@ -1,8 +1,7 @@
 import AddToFavorit from "@/components/Asset/AddToFavorit";
 import LayoutContent from "@/components/Asset/LayoutContent";
 import NextImage from "@/components/Asset/NextImage";
-import { Movie, MovieDetailsType, TVShowDetails } from "@/types";
-import { convertMinutesToHHMM } from "@/utils/format-date";
+import { TVShowDetails } from "@/types";
 import React from "react";
 
 export default function TvShowDetails(props: TVShowDetails) {

@@ -5,7 +5,7 @@ import SectionTitle from "@/components/Asset/SectionTitle";
 import React from "react";
 import CardGrid from "./CardGrid";
 import CardSkeleton from "@/components/Asset/CardSkeleton";
-import { BaseItem, Movie, TVShow } from "@/types";
+import { Movie, TVShow } from "@/types";
 
 type FeaturedSectionProps = {
   isLoading: boolean;
@@ -29,8 +29,8 @@ export default function FeaturedSection({
               </div>
             ))
           : data?.map((item) => (
-              <div className="p-2">
-                <MovieCard {...(item as any)} key={item.id} />
+              <div key={item.id} className="p-2">
+                <MovieCard {...(item as Movie)} key={item.id} />
               </div>
             ))}
       </CardGrid>

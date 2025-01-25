@@ -1,11 +1,9 @@
 "use client";
 import { useFilterParams } from "@/Providers/FilterProvider";
-import { Gener, Language, PaginateData, Person } from "@/types";
+import { PaginateData, Person } from "@/types";
 import { axiosInstance } from "@/utils/axiosInstance";
 import { useQuery } from "@tanstack/react-query";
-import clsx from "clsx";
 import React from "react";
-import Skeleton from "react-loading-skeleton";
 import Select from "react-select";
 
 export default function PersonFilter() {
