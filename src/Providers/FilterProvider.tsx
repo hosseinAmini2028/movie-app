@@ -1,5 +1,5 @@
 "use client";
-import { ItemType } from "@/types";
+import { ItemType, Person, SelectOption } from "@/types";
 import { usePathname } from "next/navigation";
 import React, {
   createContext,
@@ -11,7 +11,14 @@ import React, {
 
 type FilterParams = {
   type: ItemType;
-  with_genres ?: number
+  with_genres?: number;
+  with_original_language?: SelectOption | null;
+  with_people?: SelectOption[] | null;
+  release_date?: {
+    gte?: Date | null;
+    lte?: Date | null;
+  } | null;
+  sortBy?: SelectOption | null;
 };
 
 type FilterState = {

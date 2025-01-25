@@ -1,7 +1,11 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import ToggleListType from "./ToggleListType";
 import GenerFilter from "./GenerFilter";
+import LanguageFilter from "./LanguageFilter";
+import PersonFilter from "./PersonFilter";
+import ReleaseDateFilter from "./ReleaseDateFilter";
+import SortBySelect from "./SortBySelect";
 
 export default function ListFilters() {
   const [activetab, setActiveTab] = useState<string>("filters");
@@ -16,7 +20,27 @@ export default function ListFilters() {
         open={activetab === "filters"}
         title="Filters"
       >
-        <GenerFilter />
+        <div className="flex flex-col gap-7">
+          <ReleaseDateFilter />
+
+          <GenerFilter />
+
+          <LanguageFilter />
+
+          <PersonFilter />
+        </div>
+      </Collapse>
+
+      <Collapse
+        onClick={() =>
+          setActiveTab((prev) => (prev === "sorts" ? "" : "sorts"))
+        }
+        open={activetab === "sorts"}
+        title="Sort"
+      >
+        <div className="flex flex-col gap-7">
+          <SortBySelect />
+        </div>
       </Collapse>
     </div>
   );
@@ -31,10 +55,20 @@ type CollapseProps = {
 
 function Collapse({ title, children, open, onClick }: CollapseProps) {
   return (
-    <div onClick={onClick} className="collapse collapse-arrow bg-base-200">
-      <input type="radio" name="my-accordion-2" checked={open} />
+    <div
+      onClick={onClick}
+      className="collapse collapse-arrow overflow-visible bg-base-200"
+    >
+      <input
+        type="radio"
+        onChange={() => {}}
+        name="my-accordion-2"
+        checked={open}
+      />
       <div className="collapse-title text-xl font-medium">{title}</div>
-      <div className="collapse-content">{children}</div>
+      <div onClick={(e) => e.stopPropagation()} className="collapse-content">
+        {children}
+      </div>
     </div>
   );
 }

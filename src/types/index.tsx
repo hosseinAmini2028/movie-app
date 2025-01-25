@@ -54,3 +54,16 @@ export type Language = {
   english_name: string;
   name: string;
 };
+
+export type SelectOption = {
+  label: string;
+  value: string | number;
+};
+
+export type Person = {
+  adult: boolean;
+  gender: boolean;
+  id: number;
+  name: string;
+  original_name: string;
+};

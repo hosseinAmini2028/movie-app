@@ -4,6 +4,7 @@ import CardSkeleton from "@/components/Asset/CardSkeleton";
 import { useFilterParams } from "@/Providers/FilterProvider";
 import { Movie, PaginateData } from "@/types";
 import { axiosInstance } from "@/utils/axiosInstance";
+import { formatDate } from "@/utils/format-date";
 import {
   useInfiniteQuery,
   useQuery,
@@ -14,13 +15,28 @@ import { useInView } from "react-intersection-observer";
 
 export default function PaginateList() {
   const { ref, inView } = useInView();
-  const { filterParams } = useFilterParams();
+  const {
+    filterParams: { type, release_date, sortBy, ...allFilterParams },
+  } = useFilterParams();
   const { data, isFetching, fetchNextPage } = useInfiniteQuery({
-    queryKey: ["movies", filterParams],
+    queryKey: ["movies", type, allFilterParams, release_date, sortBy],
     queryFn: async ({ pageParam }) => {
       const result = await axiosInstance.get<PaginateData<Movie>>(
-        `/discover/${filterParams.type === "Movie" ? "movie" : "tv"}`,
-        { params: { page: pageParam, ...filterParams } }
+        `/discover/${type === "Movie" ? "movie" : "tv"}`,
+        {
+          params: {
+            page: pageParam,
+            ...allFilterParams,
+            with_original_language:
+              allFilterParams.with_original_language?.value,
+            with_people: allFilterParams.with_people
+              ?.map((i) => i.value)
+              .join(","),
+            "release_date.gte": formatDate(release_date?.gte),
+            "release_date.lte": formatDate(release_date?.lte),
+            sort_by: sortBy?.value,
+          },
+        }
       );
 
       return result.data;
@@ -45,7 +61,7 @@ export default function PaginateList() {
     <div className="grid flex-1 grid-cols-4 gap-4 ">
       {data?.map((i) => (
         <div key={i.id}>
-          <CardItem {...i} type={filterParams.type} />
+          <CardItem {...i} type={type} />
         </div>
       ))}
 
