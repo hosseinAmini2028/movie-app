@@ -2,7 +2,7 @@ import React from "react";
 import LayoutContent from "../Asset/LayoutContent";
 import Link from "next/link";
 import Image from "next/image";
-import SearchBox from "./Searchbox";
+import Searchbox from "./Searchbox";
 
 export default function Header() {
   return (
@@ -21,7 +21,7 @@ export default function Header() {
           </Link>
         </nav>
 
-        <SearchBox />
+        <Searchbox/>
       </LayoutContent>
     </header>
   );

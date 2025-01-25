@@ -1,6 +1,7 @@
 "use client";
 import { ItemType, SelectOption } from "@/types";
-import { usePathname } from "next/navigation";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import { usePathname, useSearchParams } from "next/navigation";
 import React, {
   createContext,
   PropsWithChildren,
@@ -40,7 +41,7 @@ export default function FilterProvider({ children }: PropsWithChildren) {
   });
 
   const pathname = usePathname();
-
+  const queryParams = useSearchParams();
 
   useEffect(() => {
     setFilterParams((prev) => ({
@@ -48,6 +49,8 @@ export default function FilterProvider({ children }: PropsWithChildren) {
       type: pathname === "/tv" ? "TVShow" : "Movie",
     }));
   }, [pathname]);
+
+
   return (
     <FilterContext.Provider value={{ filterParams, setFilterParams }}>
       {children}
