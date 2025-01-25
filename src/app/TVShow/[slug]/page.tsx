@@ -1,5 +1,6 @@
 import SeasonList from "@/components/Routes/Details/SeasonList";
 import TvShowDetails from "@/components/Routes/Details/TvShowDetails";
+import VisitItem from "@/components/Routes/Details/VisitItem";
 import { TVShowDetails } from "@/types";
 import cFetch from "@/utils/cFetch";
 import React from "react";
@@ -19,6 +20,8 @@ export default async function TvPage({
       <TvShowDetails {...movie} />
 
       <SeasonList image={movie.poster_path} seasons={movie.seasons} />
+
+      <VisitItem item={movie} type="TVShow" />
     </div>
   );
 }

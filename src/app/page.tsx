@@ -1,6 +1,7 @@
 import LayoutContent from "@/components/Asset/LayoutContent";
 import FeaturedMovies from "@/components/Routes/Home/FeaturedMovies";
 import FeaturedTv from "@/components/Routes/Home/FeaturedTv";
+import VisitedItems from "@/components/Routes/Home/VisitedItems";
 
 export default function Home() {
   return (
@@ -8,6 +9,8 @@ export default function Home() {
       <FeaturedMovies />
 
       <FeaturedTv />
+
+      <VisitedItems />
     </LayoutContent>
   );
 }

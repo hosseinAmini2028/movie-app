@@ -18,6 +18,7 @@ export default function FeaturedTv() {
   });
   return (
     <FeaturedSection
+    type="TVShow"
       data={data}
       isLoading={isLoading}
       title="Featured TV Shows"

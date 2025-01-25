@@ -17,6 +17,6 @@ export default function FeaturedMovies() {
     },
   });
   return (
-    <FeaturedSection data={data} isLoading={isLoading} title="Featured Movies" />
+    <FeaturedSection type="Movie" data={data} isLoading={isLoading} title="Featured Movies" />
   );
 }
