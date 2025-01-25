@@ -1,5 +1,5 @@
 import MovieDetails from "@/components/Routes/Details/MovieDetails";
-import { MovieDetailsType  } from "@/types";
+import { MovieDetailsType } from "@/types";
 import cFetch from "@/utils/cFetch";
 import React from "react";
 
@@ -14,8 +14,9 @@ export default async function MoviePage({
   const movie = await fetchData(+slug);
 
   return (
-    <div>
+ 
+     <div>
       <MovieDetails {...movie} />
-    </div>
+    </div> 
   );
 }
