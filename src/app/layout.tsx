@@ -6,6 +6,7 @@ import Footer from "@/components/Layout/Footer";
 import ReactQueryProvider from "@/Providers/ReactQueryProvider";
 import AppProvider from "@/Providers/ContextProvider";
 import { Bounce, ToastContainer } from "react-toastify";
+import BottomNavigation from "@/components/Layout/BottomNavigation";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -38,6 +39,7 @@ export default function RootLayout({
             <div className="flex min-h-screen pt-20 flex-col">
               <Header />
               <main className="flex-1">{children}</main>
+              <BottomNavigation />
               <Footer />
             </div>
           </ReactQueryProvider>

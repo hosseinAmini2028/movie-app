@@ -18,7 +18,7 @@ export default async function TvPage({
     <div>
       <TvShowDetails {...movie} />
 
-      <SeasonList seasons={movie.seasons} />
+      <SeasonList image={movie.poster_path} seasons={movie.seasons} />
     </div>
   );
 }

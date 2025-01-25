@@ -8,9 +8,9 @@ import ReleaseDateFilter from "./ReleaseDateFilter";
 import SortBySelect from "./SortBySelect";
 
 export default function ListFilters() {
-  const [activetab, setActiveTab] = useState<string>("filters");
+  const [activetab, setActiveTab] = useState<string>("");
   return (
-    <div className="w-72 flex flex-col gap-5">
+    <div className="w-full lg:w-72 flex flex-col gap-5">
       <ToggleListType />
 
       <Collapse

@@ -54,7 +54,7 @@ export default function PaginateList() {
     if (inView) fetchNextPage();
   }, [inView, fetchNextPage]);
   return (
-    <div className="grid flex-1 grid-cols-4 gap-4 ">
+    <div className="grid flex-1 grid-cols-2 lg:grid-cols-4  gap-4 ">
       {data?.map((i) => (
         <div key={i.id}>
           <CardItem {...i} type={type} />

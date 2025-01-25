@@ -5,8 +5,8 @@ import React from "react";
 
 export default function MoviesPage() {
   return (
-    <LayoutContent className="flex gap-4 justify-between">
-      <ListFilters />
+    <LayoutContent className="flex flex-col lg:flex-row gap-4 justify-between">
+        <ListFilters />
       <PaginateList />
     </LayoutContent>
   );

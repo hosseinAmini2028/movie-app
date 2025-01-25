@@ -1,7 +1,7 @@
 import AddToFavorit from "@/components/Asset/AddToFavorit";
 import LayoutContent from "@/components/Asset/LayoutContent";
 import NextImage from "@/components/Asset/NextImage";
-import {  MovieDetailsType } from "@/types";
+import { MovieDetailsType } from "@/types";
 import { convertMinutesToHHMM } from "@/utils/format-date";
 import React from "react";
 
@@ -14,53 +14,56 @@ export default function MovieDetails(props: MovieDetailsType) {
     genres,
     runtime,
     vote_average,
-    popularity
+    popularity,
   } = props;
   return (
     <div>
       <LayoutContent className="flex cart-body">
         <div className="card glass">
-          <div className="card-body">
-            <div className="flex">
+          <div className="card-body p-3 lg:p-6">
+            <div className="flex flex-col lg:flex-row">
               <NextImage
                 src={poster_path}
                 alt=""
                 width={260}
                 height={360}
-                className="rounded-2xl"
+                className="rounded-2xl mx-auto lg:mx-0"
               />
 
-              <div className="p-5 flex flex-col justify-evenly">
+              <div className="p-2 lg:p-5 mt-6 lg:mt-0  flex flex-col justify-evenly">
                 <div>
-                  <div className="flex items-center">
-                    <h1 className="text-2xl font-semibold">{title}</h1>
-                    <p className="pl-2 text-gray-500">
+                  <h1 className="text-2xl font-semibold">
+                    {title}
+                    <span className="pl-2 text-[16px] font-normal text-gray-500 max-w-fit">
                       ({new Date(Date.parse(release_date)).getFullYear()})
-                    </p>
-                  </div>
-                  <div className="flex justify-start items-center gap-3">
+                    </span>
+                  </h1>
+
+                  <div className="flex flex-wrap justify-start items-center gap-3">
                     <p className="inline-block max-w-fit">
                       {new Date(Date.parse(release_date)).toLocaleDateString()}
                     </p>
-                    <span className="w-1.5 h-1.5 bg-black rounded-full"></span>
-                    <p className="inline-block max-w-fit">
+                    <span className="w-1.5 h-1.5  hidden lg:inline-block bg-black rounded-full"></span>
+                    <p className="inline-block order-3 max-w-fit">
                       {genres.map((i) => i.name).join(", ")}
                     </p>
-                    <span className="w-1.5 h-1.5 bg-black rounded-full"></span>
+                    <span className="w-1.5 h-1.5 hidden lg:inline-block bg-black rounded-full"></span>
                     <p className="inline-block max-w-fit">
                       {convertMinutesToHHMM(runtime)}
                     </p>
                   </div>
                 </div>
 
-                <AddToFavorit {...props} type="Movie" />
+                <div className="flex mt-4  justify-between">
+                  <div>
+                    <p>ratings : {vote_average}</p>
+                    <p>popularity : {popularity}</p>
+                  </div>
 
-                <div>
-                  <p>ratings : {vote_average}</p>
-                  <p>popularity : {popularity}</p>
+                  <AddToFavorit {...props} type="Movie" />
                 </div>
 
-                <div>
+                <div className="mt-4">
                   <h3 className="font-semibold text-xl">Overview</h3>
 
                   <p className="text-gray-600 leading-10">{overview}</p>

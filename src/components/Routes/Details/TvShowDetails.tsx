@@ -7,7 +7,7 @@ import React from "react";
 export default function TvShowDetails(props: TVShowDetails) {
   const {
     poster_path,
-    title,
+    name,
     first_air_date,
     overview,
     genres,
@@ -20,19 +20,19 @@ export default function TvShowDetails(props: TVShowDetails) {
       <LayoutContent className="flex cart-body">
         <div className="card glass">
           <div className="card-body">
-            <div className="flex">
+            <div className="flex flex-col lg:flex-row">
               <NextImage
                 src={poster_path}
                 alt=""
                 width={260}
                 height={360}
-                className="rounded-2xl"
+                className="rounded-2xl mx-auto lg:mx-0"
               />
 
               <div className="p-5 flex flex-col justify-evenly">
                 <div>
                   <div className="flex items-center">
-                    <h1 className="text-2xl font-semibold">{title}</h1>
+                    <h1 className="text-2xl font-semibold">{name}</h1>
                     <p className="pl-2 text-gray-500">
                       ({new Date(Date.parse(first_air_date)).getFullYear()})
                     </p>
@@ -51,19 +51,20 @@ export default function TvShowDetails(props: TVShowDetails) {
                   </div>
                 </div>
 
-                <AddToFavorit {...props} type="Movie" />
-
-                <div>
-                  <p>ratings : {vote_average}</p>
-                  <p>popularity : {popularity}</p>
-                  <p>total seseans : {seasons.length}</p>
-                  <p>
-                    total episodes:{" "}
-                    {seasons.reduce((c, i) => c + i.episode_count, 0)}
-                  </p>
+                <div className="mt-8 flex justify-between">
+                  <div className="">
+                    <p>ratings : {vote_average}</p>
+                    <p>popularity : {popularity}</p>
+                    <p>total seseans : {seasons.length}</p>
+                    <p>
+                      total episodes:{" "}
+                      {seasons.reduce((c, i) => c + i.episode_count, 0)}
+                    </p>
+                  </div>
+                  <AddToFavorit {...props} type="Movie" />
                 </div>
 
-                <div>
+                <div className="mt-8">
                   <h3 className="font-semibold text-xl">Overview</h3>
 
                   <p className="text-gray-600 leading-10">{overview}</p>

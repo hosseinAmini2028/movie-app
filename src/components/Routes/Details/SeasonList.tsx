@@ -3,7 +3,13 @@ import NextImage from "@/components/Asset/NextImage";
 import { Season } from "@/types";
 import React from "react";
 
-export default function SeasonList({ seasons }: { seasons: Season[] }) {
+export default function SeasonList({
+  seasons,
+  image,
+}: {
+  seasons: Season[];
+  image: string;
+}) {
   return (
     <LayoutContent>
       {seasons.map((i) => (
@@ -11,7 +17,12 @@ export default function SeasonList({ seasons }: { seasons: Season[] }) {
           key={i.id}
           className="flex my-6 p-4 border border-solid border-gray-200 rounded-xl"
         >
-          <NextImage src={i.poster_path} alt="" width={90} height={160} />
+          <NextImage
+            src={i.poster_path ?? image}
+            alt=""
+            width={90}
+            height={160}
+          />
           <div className="pl-6 flex flex-col justify-evenly">
             <h3 className="text-xl font-semibold">{i.name}</h3>
             <div className="flex items-center gap-1">
@@ -25,7 +36,7 @@ export default function SeasonList({ seasons }: { seasons: Season[] }) {
 
               <p>{`${i.episode_count} Episodes`}</p>
             </div>
-            <p>{i.overview}</p>
+            <p className="text-sm text-gray-700 leading-8">{i.overview}</p>
           </div>
         </div>
       ))}

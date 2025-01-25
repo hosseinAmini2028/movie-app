@@ -5,7 +5,7 @@ import React from "react";
 
 export default function TVShowsPage() {
   return (
-    <LayoutContent className="flex gap-4 justify-between">
+    <LayoutContent className="flex flex-col lg:flex-row gap-4 justify-between">
       <ListFilters />
       <PaginateList />
     </LayoutContent>
