@@ -43,3 +43,14 @@ export type FavoritItem = {
   type: ItemType;
   item: TVShow | Movie;
 };
+
+export type Gener = {
+  id: number;
+  name: string;
+};
+
+export type Language = {
+  iso_639_1: "hi";
+  english_name: string;
+  name: string;
+};

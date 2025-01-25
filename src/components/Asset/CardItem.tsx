@@ -12,6 +12,7 @@ export default function CardItem(props: CardItemProps) {
   const {
     poster_path,
     title,
+    name,
     release_date,
     first_air_date,
     id,
@@ -31,7 +32,7 @@ export default function CardItem(props: CardItemProps) {
           />
         </figure>
         <div className="card-body relative p-1">
-          <h4 className="card-title text-[1.1rem]">{title}</h4>
+          <h4 className="card-title text-[1.1rem]">{title ?? name}</h4>
           <p className="text-gray-500 font-light text-sm">
             {release_date ?? first_air_date}
           </p>
