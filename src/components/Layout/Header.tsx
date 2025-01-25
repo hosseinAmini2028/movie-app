@@ -16,7 +16,7 @@ export default function Header() {
           <Link className="mx-3 font-semibold" href="/movies">
             Movies
           </Link>
-          <Link className="mx-3 font-semibold" href="/movies">
+          <Link className="mx-3 font-semibold" href="/tv">
             TV Shows
           </Link>
         </nav>

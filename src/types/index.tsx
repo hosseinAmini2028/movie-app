@@ -67,3 +67,40 @@ export type Person = {
   name: string;
   original_name: string;
 };
+
+export type MovieDetailsType = {
+  budget: number;
+  genres: Gener[];
+  homepage: string;
+  origin_country: ["US"];
+  original_language: "en";
+  popularity: 338.901;
+  production_companies: {
+    id: number;
+    logo_path: string;
+    name: string;
+    origin_country: string;
+  }[];
+  production_countries: {
+    iso_3166_1: string;
+    name: string;
+  }[];
+  runtime: number;
+  spoken_languages: Language[];
+} & Movie;
+
+export type Season = {
+  air_date: string;
+  episode_count: number;
+  id: 3577;
+  name: string;
+  overview: string;
+  poster_path: string;
+  season_number: number;
+  vote_average: number;
+};
+
+export type TVShowDetails = {
+  seasons: Season[];
+  genres: Gener[];
+} & TVShow;
