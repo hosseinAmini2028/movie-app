@@ -1,5 +1,4 @@
 "use client";
-import { useFilterParams } from "@/Providers/FilterProvider";
 import Link from "next/link";
 import React from "react";
 

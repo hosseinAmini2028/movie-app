@@ -29,15 +29,11 @@ export default function VisitedItems() {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
         {items?.map((i) => (
           <Link
+            key={i.item.id}
             href={`${i.type === "Movie" ? "movie" : "tv"}/${i.item.id}`}
             className="flex relative justify-between border border-gray-400 p-3 rounded-xl"
           >
-            <NextImage
-              src={i.item.poster_path}
-              alt=""
-              width={50}
-              height={75}
-            />
+            <NextImage src={i.item.poster_path} alt="" width={50} height={75} />
             <div className="flex-1 pl-2 text-sm">
               <p>{i.item.name ?? i.item.title}</p>
               <p>{i.item.first_air_date ?? i.item.release_date}</p>

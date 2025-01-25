@@ -1,7 +1,6 @@
 "use client";
 import { ItemType, MovieDetailsType, TVShowDetails } from "@/types";
-import React, { useEffect } from "react";
-import { json } from "stream/consumers";
+import  { useEffect } from "react";
 
 export default function VisitItem({
   item,

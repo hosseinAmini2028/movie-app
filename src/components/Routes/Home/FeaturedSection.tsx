@@ -1,5 +1,4 @@
 "use client";
-import MovieCard from "@/components/Asset/MovieCard";
 import SectionTitle from "@/components/Asset/SectionTitle";
 
 import React from "react";

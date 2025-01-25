@@ -3,11 +3,8 @@ import CardItem from "@/components/Asset/CardItem";
 import CardSkeleton from "@/components/Asset/CardSkeleton";
 import SearchField from "@/components/Layout/Searchbox/SearchField";
 import useSearch from "@/hooks/useSearch";
-import { ItemType, Movie, PaginateData } from "@/types";
-import { axiosInstance } from "@/utils/axiosInstance";
-import { InfiniteData, useInfiniteQuery } from "@tanstack/react-query";
-import { useRouter, useSearchParams } from "next/navigation";
-import React, { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import ToggleListType from "./ToggleListType";
 
@@ -22,7 +19,6 @@ export default function SearchLayout() {
   }, [inView, fetchNextPage]);
 
   const handleSetQuery = (q: string) => {
-    console.log(q);
     router.push(`/search?query=${q}&type=${type}`);
   };
   return (

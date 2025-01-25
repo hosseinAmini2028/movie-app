@@ -3,7 +3,7 @@ import { ItemType, Movie, PaginateData } from "@/types";
 import { axiosInstance } from "@/utils/axiosInstance";
 import { InfiniteData, useInfiniteQuery } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function useSearch() {
   const [query, setQuery] = useState<string>("");
