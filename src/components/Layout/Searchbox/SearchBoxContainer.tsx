@@ -7,8 +7,9 @@ import { axiosInstance } from "@/utils/axiosInstance";
 import NextImage from "@/components/Asset/NextImage";
 import IconLoading from "@/components/Asset/IconLoading";
 import usePopup from "@/hooks/usePopup";
-import {  FilmIcon, TvIcon } from "@heroicons/react/24/outline";
+import { FilmIcon, TvIcon } from "@heroicons/react/24/outline";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 export default function SearchBoxContainer() {
   const [query, setQuery] = useState<string>("");
@@ -80,10 +81,13 @@ export default function SearchBoxContainer() {
                     </p>
                   </div>
 
-                  <button className="flex items-center">
+                  <Link
+                    href={`/${type}/${item.id}`}
+                    className="flex items-center"
+                  >
                     details
                     <ChevronRightIcon width={16} height={16} />
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>
