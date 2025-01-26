@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🎥 Movie & TV Show Search Application
+=====================================
 
-## Getting Started
+This project is a **Movie & TV Show Search Application** built with **Next.js**, **Tailwind CSS**, **React Query**, and other modern tools. Users can search for movies and TV shows, filter and sort results, view details, and manage their favorites list.
 
-First, run the development server:
+🚀 Features
+-----------
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### **Core Functionality**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*   **Search**: Search movies and TV shows by title with autocomplete.
+    
+*   **Filter**: Filter results by genre, language, release date, etc.
+    
+*   **Sort**: Sort results by popularity, release date, rating, or title.
+    
+*   **Favorites List**: Add or remove items from a favorites list stored in local storage.
+    
+*   **Details Page**: View complete details for movies or TV shows, including a summary, cast, and genre.
+    
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **User Experience**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+*   **Responsive Design**: Works seamlessly across desktop, tablet, and mobile.
+    
+*   **Skeleton Placeholders**: Shows loading skeletons while fetching data.
+    
+*   **Dark Mode**: Not included in this project.
+    
 
-## Learn More
+### **API Integration**
 
-To learn more about Next.js, take a look at the following resources:
+*   Fetches data from the [TMDb API](https://www.themoviedb.org/documentation/api).
+    
+*   Handles API requests with **Axios** and **React Query**.
+    
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🛠️ Tech Stack
+--------------
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+*   **Framework**: [Next.js](https://nextjs.org/)
+    
+*   **Programming Language**: TypeScript
+    
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+    
+*   **State Management**: [React Query](https://tanstack.com/query/latest)
+    
+*   **API Handling**: Axios
+    
+*   **Slider Component**: [React Slick](https://react-slick.neostack.com/)
+    
 
-## Deploy on Vercel
+🏗️ Installation and Setup
+--------------------------
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequisites
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*   Node.js (v16 or higher)
+    
+*   npm or yarn
+    
+
+### Steps to Run Locally
+
+  bash 
+    git clone https://github.com/hosseinAmini2028/movie-app.git cd movie-app
+    
+2.  bash
+
+   npm install
+    
+3.  **Set Up API Keys:**
+    
+    *   Create a .env.local file in the root directory.
+        
+    *   envCopyNEXT\_PUBLIC\_TMDB\_API\_KEY=your\_api\_key\_here
+        
+4.  bashCopynpm run dev
+    
+5.  arduinoCopyhttp://localhost:3000
+    
+
+🌐 Demo
+-------
+
+A live demo of this project is available here:[https://ham-movie-app.vercel.app/](#)
+
+🧪 Testing
+----------
+
+**Note:** This project does not include tests. If required, you can add tests using **Jest** or **React Testing Library**.
+
+🚢 Deployment
+-------------
+
+This application is deployed on **Vercel**. To deploy it yourself:
+
+1.  Push the project to a GitHub repository.
+    
+2.  Log in to [Vercel](https://vercel.com/) and create a new project.
+    
+3.  Connect the GitHub repository.
+    
+4.  Add the TMDb API key in Vercel’s environment settings.
+    
+5.  Deploy the project.
+    
+
+Alternatively, you can deploy using the following command:
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bashCopyvercel --prod   `
+
+📚 Future Improvements
+----------------------
+
+*   **Dark Mode**: Add a dark theme for better usability.
+    
+*   **Infinite Scrolling**: Implement infinite scrolling for search results.
+    
+*   **Multi-Language Support**: Add localization for multiple languages.
+    
+*   **Unit Testing**: Add unit tests for key components and functionality.
+    
+
+🤝 Acknowledgments
+------------------
+
+*   **TMDb** for providing the API and data.
+    
+*   Responsive design built with **Tailwind CSS**.
+    
+*   Deployed seamlessly using **Vercel**.
