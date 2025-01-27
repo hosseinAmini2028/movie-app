@@ -12,12 +12,13 @@ export default function NextImage({
   };
   return (
     <Image
-      {...props}
-      src={`${src}`}
-      loader={imageLoader}
-      loading={"lazy"}
-      placeholder="blur"
-      blurDataURL={imageLoader2.blurDataURL}
+    src={`${src}`}
+    loader={imageLoader}
+    loading={"lazy"}
+    placeholder="blur"
+    blurDataURL={imageLoader2.blurDataURL}
+    {...props}
+    alt=""
     />
   );
 }

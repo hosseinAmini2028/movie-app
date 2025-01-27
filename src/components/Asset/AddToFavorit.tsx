@@ -1,16 +1,22 @@
 "use client";
-import { useAppContext } from "@/Providers/ContextProvider";
 import { ItemType, Movie, TVShow } from "@/types";
 import { HeartIcon } from "@heroicons/react/24/solid";
 import { HeartIcon as HeartIconOutline } from "@heroicons/react/24/outline";
 import React, { useMemo } from "react";
 import { toast } from "react-toastify";
+import { useAppDispatch, useAppSelector } from "@/Redux/store";
+import {
+  addToFavorite,
+  removeFavorite,
+  selectFavoriteList,
+} from "@/Redux/slices/appSlice";
 
 export default function AddToFavorit(
   props: (Movie | TVShow) & { type: ItemType }
 ) {
   const { id, type } = props;
-  const { favoritList, addToFavorite, removeFavorite } = useAppContext();
+  const dispatch = useAppDispatch();
+  const favoritList = useAppSelector(selectFavoriteList);
 
   const isFavirote = useMemo(() => {
     return favoritList.find((i) => i.item.id === id && i.type === type);
@@ -21,9 +27,9 @@ export default function AddToFavorit(
     e.stopPropagation();
     e.preventDefault();
     if (isFavirote) {
-      removeFavorite({ item: props, type });
+      dispatch(removeFavorite({ item: props, type }));
     } else {
-      addToFavorite({ item: props, type });
+      dispatch(addToFavorite({ item: props, type }));
     }
 
     toast.success(

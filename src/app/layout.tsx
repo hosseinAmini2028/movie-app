@@ -4,9 +4,9 @@ import "./globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import ReactQueryProvider from "@/Providers/ReactQueryProvider";
-import AppProvider from "@/Providers/ContextProvider";
 import { Bounce, ToastContainer } from "react-toastify";
 import BottomNavigation from "@/components/Layout/BottomNavigation";
+import ReduxProvider from "@/Providers/ReduxProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,7 +34,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-slate-50 antialiased`}
       >
-        <AppProvider>
+        <ReduxProvider>
           <ReactQueryProvider>
             <div className="flex min-h-screen pt-20 flex-col">
               <Header />
@@ -57,7 +57,7 @@ export default function RootLayout({
             theme="colored"
             transition={Bounce}
           />
-        </AppProvider>
+        </ReduxProvider>
       </body>
     </html>
   );
